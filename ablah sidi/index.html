@@ -1,0 +1,1049 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Ablah Sidi ❤️</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #ffecd2 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Welcome Page */
+        .welcome-page {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: linear-gradient(135deg, #ff1493 0%, #ff69b4 50%, #da70d6 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            transition: opacity 1s ease;
+        }
+
+        .welcome-page.fade-out {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .welcome-content {
+            text-align: center;
+            animation: welcomeIn 1.5s ease-out;
+        }
+
+        @keyframes welcomeIn {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        /* This makes the image spin */
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.profile-photo {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid white;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+    
+    /* Add this line below to trigger the rotation */
+    animation: spin 10s linear infinite; 
+}
+
+        .photo-frame {
+            position: relative;
+            width: 250px;
+            height: 250px;
+            margin: 0 auto 40px;
+            border-radius: 50%;
+            padding: 8px;
+            background: linear-gradient(135deg, #fff, #ffb6c1, #fff);
+            animation: rotateGradient 3s linear infinite;
+        }
+
+        @keyframes rotateGradient {
+            0% { filter: hue-rotate(0deg); }
+            100% { filter: hue-rotate(360deg); }
+        }
+
+        .profile-photo {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid white;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+        }
+
+        .welcome-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 4.5em;
+            color: white;
+            margin-bottom: 20px;
+            text-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .welcome-text {
+            font-size: 1.5em;
+            color: white;
+            margin-bottom: 40px;
+        }
+
+        .enter-btn {
+            background: white;
+            color: #ff1493;
+            border: none;
+            padding: 20px 60px;
+            border-radius: 50px;
+            font-size: 1.4em;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .enter-btn:hover {
+            transform: translateY(-8px) scale(1.1);
+        }
+
+        /* Main Content */
+        .main-content {
+            display: none;
+            position: relative;
+            z-index: 2;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Music Player */
+        .music-player {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
+            background: linear-gradient(135deg, #ff1493, #ff69b4);
+            padding: 15px 25px;
+            border-radius: 50px;
+            box-shadow: 0 10px 40px rgba(255, 20, 147, 0.5);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .music-player button {
+            background: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .music-player span {
+            color: white;
+            font-weight: 600;
+        }
+
+        /* Card Styles */
+        .card {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(20px);
+            border-radius: 30px;
+            padding: 50px;
+            margin-bottom: 40px;
+            box-shadow: 0 20px 60px rgba(255, 20, 147, 0.2);
+            transition: all 0.5s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 80px rgba(255, 20, 147, 0.3);
+        }
+
+        .card h2 {
+            background: linear-gradient(135deg, #ff1493, #ff69b4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Hero with Slideshow */
+        .hero {
+            text-align: center;
+            color: white;
+            margin-bottom: 60px;
+            padding: 60px 20px;
+        }
+
+        .slideshow-container {
+            min-height: 200px;
+        }
+
+        .slide {
+            display: none;
+        }
+
+        .slide.active {
+            display: block;
+            animation: fadeIn 1s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .slide h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4em;
+            margin-bottom: 20px;
+            text-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .slide p {
+            font-size: 1.5em;
+        }
+
+        /* Countdown Timer */
+        .countdown-container {
+            text-align: center;
+            padding: 40px;
+            background: linear-gradient(135deg, #fff0f6, #ffe4f0);
+            border-radius: 20px;
+            margin: 30px 0;
+        }
+
+        .countdown-display {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .countdown-item {
+            background: linear-gradient(135deg, #ff1493, #ff69b4);
+            color: white;
+            padding: 25px 30px;
+            border-radius: 15px;
+        }
+
+        .countdown-number {
+            font-size: 3em;
+            font-weight: 700;
+            display: block;
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            padding: 40px 0;
+        }
+
+        .timeline-item {
+            background: linear-gradient(135deg, #fff0f6, #ffe4f0);
+            padding: 25px;
+            border-radius: 20px;
+            margin-bottom: 30px;
+            cursor: pointer;
+            transition: all 0.4s ease;
+        }
+
+        .timeline-item:hover {
+            transform: scale(1.05);
+            background: linear-gradient(135deg, #ff69b4, #da70d6);
+            color: white;
+        }
+
+        .timeline-date {
+            font-weight: 700;
+            color: #ff1493;
+            margin-bottom: 10px;
+        }
+
+        .timeline-item:hover .timeline-date {
+            color: white;
+        }
+
+        /* Gift Boxes */
+        .gift-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .gift-box {
+            background: linear-gradient(135deg, #fff0f6, #ffe4f0);
+            padding: 40px 20px;
+            border-radius: 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.4s ease;
+        }
+
+        .gift-box:hover {
+            transform: translateY(-10px) rotate(5deg);
+        }
+
+        .gift-icon {
+            font-size: 3em;
+            margin-bottom: 15px;
+        }
+
+        .gift-message {
+            display: none;
+            margin-top: 20px;
+            padding: 20px;
+            background: linear-gradient(135deg, #ff69b4, #da70d6);
+            color: white;
+            border-radius: 15px;
+        }
+
+        .gift-box.opened .gift-message {
+            display: block;
+        }
+
+        /* Quiz */
+        .quiz-question {
+            background: linear-gradient(135deg, #fff0f6, #ffe4f0);
+            padding: 30px;
+            border-radius: 20px;
+            margin-bottom: 20px;
+            display: none;
+        }
+
+        .quiz-question.active {
+            display: block;
+        }
+
+        .quiz-options {
+            display: grid;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .quiz-option {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            border: 2px solid #ffb6c1;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .quiz-option:hover {
+            background: linear-gradient(135deg, #ff69b4, #da70d6);
+            color: white;
+        }
+
+        .quiz-result {
+            display: none;
+            text-align: center;
+            padding: 40px;
+            background: linear-gradient(135deg, #90ee90, #98fb98);
+            border-radius: 20px;
+            font-size: 1.3em;
+        }
+
+        /* Reason Generator */
+        .reason-display {
+            font-size: 1.4em;
+            margin: 30px 0;
+            min-height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .generate-btn {
+            background: linear-gradient(135deg, #ff1493, #ff69b4);
+            color: white;
+            border: none;
+            padding: 18px 45px;
+            border-radius: 50px;
+            font-size: 1.2em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.4s ease;
+        }
+
+        .generate-btn:hover {
+            transform: translateY(-5px) scale(1.05);
+        }
+
+        /* Open When Letters */
+        .letters-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .letter-envelope {
+            background: linear-gradient(135deg, #fff0f6, #ffe4f0);
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.4s ease;
+        }
+
+        .letter-envelope:hover {
+            transform: scale(1.05);
+            background: linear-gradient(135deg, #ff69b4, #da70d6);
+            color: white;
+        }
+
+        .letter-icon {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 10000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+        }
+
+        .modal-content {
+            background: white;
+            margin: 10% auto;
+            padding: 50px;
+            border-radius: 30px;
+            width: 80%;
+            max-width: 600px;
+            max-height: 70vh;
+            overflow-y: auto;
+        }
+
+        .close-modal {
+            float: right;
+            font-size: 2em;
+            cursor: pointer;
+            color: #ff1493;
+        }
+
+        .modal-text {
+            font-size: 1.2em;
+            line-height: 2;
+            margin-top: 30px;
+        }
+
+        /* Form Styles */
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 600;
+            color: #ff1493;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #ffb6c1;
+            border-radius: 15px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .form-group textarea {
+            min-height: 100px;
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, #ff1493, #ff69b4);
+            color: white;
+            border: none;
+            padding: 20px 50px;
+            border-radius: 50px;
+            font-size: 1.2em;
+            cursor: pointer;
+            display: block;
+            margin: 30px auto;
+            transition: all 0.4s ease;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-5px) scale(1.05);
+        }
+
+        /* Confetti */
+        .confetti {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            background: #ff69b4;
+            animation: confettiFall 3s linear;
+            z-index: 9999;
+        }
+
+        @keyframes confettiFall {
+            to {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* Voice Message */
+        .voice-container {
+            text-align: center;
+            padding: 40px;
+        }
+
+        .voice-play-btn {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #ff1493, #ff69b4);
+            border: none;
+            color: white;
+            font-size: 2.5em;
+            cursor: pointer;
+            box-shadow: 0 10px 30px rgba(255, 20, 147, 0.4);
+        }
+
+        .voice-play-btn:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <!-- Background Music -->
+    <audio id="bgMusic" loop>
+        <source src="Crayon-Ngozi-ft-Ayra-Starr_1.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Welcome Page -->
+    <div class="welcome-page" id="welcomePage">
+        <div class="welcome-content">
+            <div class="photo-frame">
+                <img src="ablah_photo.jpeg" alt="Ablah Sidi" class="profile-photo">
+            </div>
+            <h1 class="welcome-title">Welcome, Ablah! 🌟</h1>
+            <p class="welcome-text">This special place was created just for you</p>
+            <button class="enter-btn" onclick="enterSite()">Enter ✨</button>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content" id="mainContent">
+        <!-- Music Player -->
+        <div class="music-player">
+            <button id="musicToggle" onclick="toggleMusic()">🎵</button>
+            <span id="musicStatus">Music</span>
+        </div>
+
+        <div class="container">
+            <!-- Hero Section with Slideshow -->
+            <div class="hero">
+                <div class="slideshow-container">
+                    <div class="slide active">
+                        <h1>Ablah Sidi</h1>
+                        <p>A Beautiful Soul Who Brightens My Life Every Day</p>
+                    </div>
+                    <div class="slide">
+                        <h1>True Friendship</h1>
+                        <p>Is A Blessing That Transforms Ordinary Moments</p>
+                    </div>
+                    <div class="slide">
+                        <h1>Grateful Every Day</h1>
+                        <p>For The Gift Of Your Friendship</p>
+                    </div>
+                </div>
+                <p style="margin-top: 30px; font-size: 1.3em;">💕 Thank you for accepting me as your friend 💕</p>
+            </div>
+
+            <!-- Countdown Timer -->
+            <div class="card">
+                <h2>⏰ Our Friendship Journey</h2>
+                <div class="countdown-container">
+                    <div class="countdown-display" id="countdown">
+                        <!-- Countdown will be inserted here -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Voice Message -->
+            <div class="card">
+                <h2>🎤 A Special Message For You</h2>
+                <div class="voice-container">
+                    <p style="margin-bottom: 20px; font-size: 1.2em;">Click to hear a special message from Adam</p>
+                    <button class="voice-play-btn" onclick="playVoice()">▶️</button>
+                    <audio id="voiceMessage">
+                        <source src="LAZIILO-Rema-Calm-Down-Cover_1.mp3" type="audio/mpeg">
+                    </audio>
+                    <p style="margin-top: 20px; font-style: italic; color: #666;">
+                       
+                    </p>
+                </div>
+            </div>
+
+            <!-- Memory Timeline -->
+            <div class="card">
+                <h2>📅 Our Beautiful Memories</h2>
+                <div class="timeline">
+                    <div class="timeline-item" onclick="this.classList.toggle('expanded')">
+                        <div class="timeline-date">🌟 The Day We Met</div>
+                        <div>The beginning of an amazing friendship that changed my life forever</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">😂 First Laugh Together</div>
+                        <div>I'll never forget how your laughter filled the room with joy</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">💭 Deep Conversations</div>
+                        <div>Late night talks that made me realize how special you are</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">🎉 Celebrating Together</div>
+                        <div>Every celebration is better with you by my side</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">🤝 Always There</div>
+                        <div>Through ups and downs, you've been a constant blessing</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Virtual Gift Boxes -->
+            <div class="card">
+                <h2>🎁 Open Your Gifts</h2>
+                <p style="margin-bottom: 20px;">Click each gift to reveal a special surprise!</p>
+                <div class="gift-grid">
+                    <div class="gift-box" onclick="openGift(this, 'Your smile could brighten the darkest day. Never stop smiling!')">
+                        <div class="gift-icon">🎁</div>
+                        <div>Tap to Open</div>
+                        <div class="gift-message"></div>
+                    </div>
+                    <div class="gift-box" onclick="openGift(this, 'You are stronger than you know and braver than you think!')">
+                        <div class="gift-icon">💝</div>
+                        <div>Tap to Open</div>
+                        <div class="gift-message"></div>
+                    </div>
+                    <div class="gift-box" onclick="openGift(this, 'I promise to always support you and be there when you need me!')">
+                        <div class="gift-icon">🎀</div>
+                        <div>Tap to Open</div>
+                        <div class="gift-message"></div>
+                    </div>
+                    <div class="gift-box" onclick="openGift(this, 'Your kindness makes the world a better place. Thank you for being you!')">
+                        <div class="gift-icon">🌸</div>
+                        <div>Tap to Open</div>
+                        <div class="gift-message"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Friendship Quiz -->
+            <div class="card">
+                <h2>🎯 How Well Do You Know Our Friendship?</h2>
+                <div class="quiz-container">
+                    <div class="quiz-question active" id="q1">
+                        <h3>What do I value most about our friendship?</h3>
+                        <div class="quiz-options">
+                            <div class="quiz-option" onclick="answerQuiz(1, true)">Your honesty and genuine nature</div>
+                            <div class="quiz-option" onclick="answerQuiz(1, false)">Having someone to talk to</div>
+                            <div class="quiz-option" onclick="answerQuiz(1, false)">Fun times together</div>
+                        </div>
+                    </div>
+                    <div class="quiz-question" id="q2">
+                        <h3>What makes me smile the most?</h3>
+                        <div class="quiz-options">
+                            <div class="quiz-option" onclick="answerQuiz(2, false)">Funny videos</div>
+                            <div class="quiz-option" onclick="answerQuiz(2, true)">When you share good news with me</div>
+                            <div class="quiz-option" onclick="answerQuiz(2, false)">Random jokes</div>
+                        </div>
+                    </div>
+                    <div class="quiz-question" id="q3">
+                        <h3>What do I hope for your future?</h3>
+                        <div class="quiz-options">
+                            <div class="quiz-option" onclick="answerQuiz(3, false)">Financial success</div>
+                            <div class="quiz-option" onclick="answerQuiz(3, true)">Complete happiness and fulfillment of all your dreams</div>
+                            <div class="quiz-option" onclick="answerQuiz(3, false)">Fame</div>
+                        </div>
+                    </div>
+                    <div class="quiz-result" id="quizResult"></div>
+                </div>
+            </div>
+
+            <!-- Reasons Generator -->
+            <div class="card">
+                <h2>💖 Infinite Reasons Why You're Amazing</h2>
+                <div class="reason-display" id="reasonDisplay">Click the button to see why you're incredible!</div>
+                <button class="generate-btn" onclick="generateReason()">Tell Me Another Reason 🎲</button>
+            </div>
+
+            <!-- Open When Letters -->
+            <div class="card">
+                <h2>💌 Open When... Letters</h2>
+                <p style="margin-bottom: 20px;">Click any letter when you need it</p>
+                <div class="letters-grid">
+                    <div class="letter-envelope" onclick="openLetter('sad')">
+                        <div class="letter-icon">😢</div>
+                        <div class="letter-title">Open When You're Sad</div>
+                    </div>
+                    <div class="letter-envelope" onclick="openLetter('happy')">
+                        <div class="letter-icon">🎉</div>
+                        <div class="letter-title">Open When You're Happy</div>
+                    </div>
+                    <div class="letter-envelope" onclick="openLetter('motivation')">
+                        <div class="letter-icon">💪</div>
+                        <div class="letter-title">Open When You Need Motivation</div>
+                    </div>
+                    <div class="letter-envelope" onclick="openLetter('miss')">
+                        <div class="letter-icon">💭</div>
+                        <div class="letter-title">Open When You Miss Me</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="card">
+                <h2>🌸 Tell Me More About You!</h2>
+                <form id="contactForm" action="https://formspree.io/f/mpqjadob" method="POST">
+                    <div class="form-group">
+                        <label>✨ Your Nickname</label>
+                        <input type="text" name="nickname" required>
+                    </div>
+                    <div class="form-group">
+                        <label>👯‍♀️ Best Friend</label>
+                        <input type="text" name="bestfriend" required>
+                    </div>
+                    <div class="form-group">
+                        <label>🍕 Favorite Food</label>
+                        <input type="text" name="food" required>
+                    </div>
+                    <div class="form-group">
+                        <label>🎯 Hobbies & Interests</label>
+                        <textarea name="hobbies" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>💭 Your Dreams</label>
+                        <textarea name="dreams" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>❌ Things You Don't Like</label>
+                        <textarea name="dislikes" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn" onclick="return submitForm()">Share With Me 💖</button>
+                </form>
+            </div>
+
+            <!-- Final Message -->
+            <div class="card" style="background: linear-gradient(135deg, #ff1493, #ff69b4); color: white; text-align: center;">
+                <h2 style="color: white;">💖 From The Heart 💖</h2>
+                <p style="font-size: 1.3em; line-height: 2;">
+                    Dear Ablah, thank you for accepting me as your friend. Your presence in my life is a blessing I never take for granted. 
+                    Every moment shared with you is a treasured memory. You deserve all the happiness, success, and love this world has to offer.
+                    May your days be filled with joy and may you always know how truly special you are.
+                </p>
+                <p style="font-size: 1.5em; margin-top: 30px; font-style: italic;">With respect, admiration, and gratitude,<br>Adam 🌟</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for Letters -->
+    <div id="letterModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <div class="modal-text" id="modalText"></div>
+        </div>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        let quizScore = 0;
+        let currentQuestion = 1;
+        const music = document.getElementById('bgMusic');
+        let musicPlaying = false;
+
+        // Start date for countdown (change this to your actual friendship start date)
+        const friendshipStartDate = new Date('2024-01-01');
+
+        // Enter Site Function
+        function enterSite() {
+            document.getElementById('welcomePage').classList.add('fade-out');
+            setTimeout(() => {
+                document.getElementById('welcomePage').style.display = 'none';
+                document.getElementById('mainContent').style.display = 'block';
+                startSlideshow();
+                updateCountdown();
+                setInterval(updateCountdown, 1000);
+            }, 1000);
+        }
+
+        // Music Toggle
+        function toggleMusic() {
+            if (musicPlaying) {
+                music.pause();
+                document.getElementById('musicToggle').textContent = '🎵';
+                document.getElementById('musicStatus').textContent = 'Music';
+                musicPlaying = false;
+            } else {
+                music.play();
+                document.getElementById('musicToggle').textContent = '⏸️';
+                document.getElementById('musicStatus').textContent = 'Playing';
+                musicPlaying = true;
+            }
+        }
+
+        // Auto-start music when entering (some browsers may block this)
+        function enterSite() {
+            document.getElementById('welcomePage').classList.add('fade-out');
+            setTimeout(() => {
+                document.getElementById('welcomePage').style.display = 'none';
+                document.getElementById('mainContent').style.display = 'block';
+                startSlideshow();
+                updateCountdown();
+                setInterval(updateCountdown, 1000);
+                
+                // Try to auto-play music
+                music.play().then(() => {
+                    musicPlaying = true;
+                    document.getElementById('musicToggle').textContent = '⏸️';
+                    document.getElementById('musicStatus').textContent = 'Playing';
+                }).catch(() => {
+                    // Auto-play blocked, user needs to click
+                });
+            }, 1000);
+        }
+
+        // Slideshow
+        function startSlideshow() {
+            const slides = document.querySelectorAll('.slide');
+            setInterval(() => {
+                slides[currentSlide].classList.remove('active');
+                currentSlide = (currentSlide + 1) % slides.length;
+                slides[currentSlide].classList.add('active');
+            }, 5000);
+        }
+
+        // Countdown Timer
+        function updateCountdown() {
+            const now = new Date();
+            const diff = now - friendshipStartDate;
+            
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+            
+            document.getElementById('countdown').innerHTML = `
+                <div class="countdown-item">
+                    <span class="countdown-number">${days}</span>
+                    <span class="countdown-label">Days</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number">${hours}</span>
+                    <span class="countdown-label">Hours</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number">${minutes}</span>
+                    <span class="countdown-label">Minutes</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number">${seconds}</span>
+                    <span class="countdown-label">Seconds</span>
+                </div>
+            `;
+        }
+
+        // Voice Message
+        function playVoice() {
+            const voice = document.getElementById('voiceMessage');
+            if (voice.paused) {
+                voice.play();
+            } else {
+                voice.pause();
+            }
+        }
+
+        // Gift Boxes
+        function openGift(element, message) {
+            if (!element.classList.contains('opened')) {
+                element.classList.add('opened');
+                element.querySelector('.gift-message').textContent = message;
+                createConfetti();
+            }
+        }
+
+        // Confetti
+        function createConfetti() {
+            for (let i = 0; i < 50; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti';
+                confetti.style.left = Math.random() * 100 + '%';
+                confetti.style.background = ['#ff69b4', '#da70d6', '#ff1493', '#ffd700'][Math.floor(Math.random() * 4)];
+                confetti.style.animationDelay = Math.random() * 2 + 's';
+                document.body.appendChild(confetti);
+                setTimeout(() => confetti.remove(), 3000);
+            }
+        }
+
+        // Quiz
+        function answerQuiz(questionNum, correct) {
+            if (correct) {
+                quizScore++;
+                alert('Correct! You know me well! ❤️');
+            } else {
+                alert('Not quite, but that\'s okay! Keep getting to know me! 😊');
+            }
+            
+            document.getElementById('q' + questionNum).classList.remove('active');
+            
+            if (questionNum < 3) {
+                document.getElementById('q' + (questionNum + 1)).classList.add('active');
+            } else {
+                const result = document.getElementById('quizResult');
+                result.style.display = 'block';
+                result.innerHTML = `
+                    <h2>You got ${quizScore} out of 3! 🎉</h2>
+                    <p>${quizScore === 3 ? 'Perfect! You truly understand our friendship! 💖' : 
+                         quizScore === 2 ? 'Great job! You know me well! 😊' : 
+                         'We still have so much to learn about each other! 🌟'}</p>
+                `;
+                createConfetti();
+            }
+        }
+
+        // Reasons Generator
+        const reasons = [
+            "Your smile is contagious and brightens everyone's day",
+            "You have an incredible ability to make people feel valued",
+            "Your kindness knows no bounds",
+            "You inspire me to be a better person every day",
+            "Your laugh is the most beautiful sound",
+            "You're genuine and authentic in a world that needs more of that",
+            "Your strength in facing challenges is admirable",
+            "You make ordinary moments feel special",
+            "Your intelligence and curiosity are inspiring",
+            "You have a heart of gold",
+            "You're thoughtful and considerate of others",
+            "Your positive energy is infectious",
+            "You're brave enough to be yourself",
+            "You make the world a better place just by being in it",
+            "Your friendship is a treasure I cherish",
+            "You see the best in people",
+            "Your creativity and imagination are amazing",
+            "You're reliable and trustworthy",
+            "You have a wonderful sense of humor",
+            "Your compassion for others is beautiful",
+            "You're an incredible listener",
+            "You bring out the best in those around you",
+            "Your dreams and ambitions are inspiring",
+            "You're resilient and never give up",
+            "You make everyone feel welcome and included",
+            "Your honesty is refreshing",
+            "You have an amazing ability to spread joy",
+            "You're wise beyond your years",
+            "Your presence makes everything better",
+            "You're one of a kind and irreplaceable"
+        ];
+
+        let usedReasons = [];
+
+        function generateReason() {
+            if (usedReasons.length === reasons.length) {
+                usedReasons = [];
+            }
+            
+            let randomReason;
+            do {
+                randomReason = reasons[Math.floor(Math.random() * reasons.length)];
+            } while (usedReasons.includes(randomReason));
+            
+            usedReasons.push(randomReason);
+            document.getElementById('reasonDisplay').textContent = randomReason;
+        }
+
+        // Open When Letters
+        const letters = {
+            sad: "Hey beautiful soul, I know things are tough right now, but remember: storms don't last forever. You are stronger than you know, braver than you believe, and more loved than you can imagine. This difficult moment will pass, and you'll emerge even stronger. I'm here for you, always. Your smile will return, and when it does, it will shine brighter than ever. You've got this! 💪❤️",
+            
+            happy: "YES! This is what I love to see! Your happiness is contagious and makes the world a better place. Celebrate every victory, no matter how small. You deserve all this joy and so much more. Keep shining, keep smiling, and keep being the amazing person you are. I'm so proud of you and so grateful to witness your happiness! 🎉✨",
+            
+            motivation: "Listen up, champion! You have everything you need inside you to achieve your dreams. Every expert was once a beginner. Every success story started with someone who refused to give up. That someone is YOU. You're capable of incredible things. Don't let fear or doubt hold you back. Take that first step, then another, and another. I believe in you completely, and I'm cheering you on every step of the way! You've got this! 🚀💪",
+            
+            miss: "Aww, I miss you too! Distance means nothing when someone means everything. Our friendship transcends physical space - you're always in my thoughts and in my heart. Remember all our good times together, and know that we'll make many more amazing memories. Until we see each other again, know that you're valued, appreciated, and truly missed. Thinking of you! 🥰💕"
+        };
+
+        function openLetter(type) {
+            document.getElementById('letterModal').style.display = 'block';
+            document.getElementById('modalText').innerHTML = `
+                <h2 style="color: #ff1493; margin-bottom: 20px;">📬 Letter For You</h2>
+                <p>${letters[type]}</p>
+            `;
+        }
+
+        function closeModal() {
+            document.getElementById('letterModal').style.display = 'none';
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('letterModal');
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
+
+        // Form Submission
+        function submitForm() {
+            const form = document.getElementById('contactForm');
+            const action = form.getAttribute('action');
+            
+            if (action.includes('YOUR_FORM_ID')) {
+                alert('⚠️ Please set up Formspree first!\n\n1. Go to formspree.io\n2. Create account\n3. Create new form\n4. Replace YOUR_FORM_ID with your actual ID');
+                return false;
+            }
+            
+            createConfetti();
+            setTimeout(() => {
+                alert('Thank you for sharing! Your responses mean the world to me! 💖');
+            }, 500);
+            return true;
+        }
+    </script>
+</body>
+</html>
